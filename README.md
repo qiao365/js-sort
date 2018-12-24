@@ -1,7 +1,63 @@
-# js-sort
+## Sort()
 
+srot()如果不带参数，是将按字母顺序对数组中的元素进行排序，也就是是按照字符编码的顺序进行排序。
 
-#快速排序
+    var arr1 = ['a', 'd', 'c', 'b'];
+    arr.sort();  //['a', 'b', 'c', 'd']
+     
+    var arr2 = [10, 5, 40, 25, 100, 1];
+    arr2.sort(); //[1, 10 ,100, 25, 40, 5]
+
+为sort()中传入排序规则函数可实现自定义排序
+
+排序函数规则：
+
+    传两个形参
+    当返回值为正数时，交换传入两形参在数组中位置
+
+排序的内置算法：
+
+JS中sort实现算法居然是O(n^2)的冒泡排序，所以有时候有必要自己实现那些算法，可以参考这个网址胡耀的github/sort
+按照数值大小进行排序-升序
+
+    arr.sort(function(a,b){
+        return a - b;
+    })
+
+按照数值大小进行排序-降序
+
+    arr.sort(function(a,b){
+    	return b - a;
+    })
+
+按照数组中对象的某一个属性值进行排序
+
+    var arr = [
+        {name:'zopp',age:0},
+        {name:'gpp',age:18},
+        {name:'yjj',age:8}
+    ];
+    function compare(property){
+        return function(a,b){
+            var value1 = a[property];
+            var value2 = b[property];
+            return value1 - value2;
+        }
+    }
+    console.log(arr.sort(compare('age')))
+
+让数组乱序
+
+    arr.sort(function(a,b){
+    	return Math.random() - 0.5;
+    })
+--------------------- 
+作者：huyao_road 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_37746973/article/details/80297570 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+## 快速排序
 
 ```javascript
 
