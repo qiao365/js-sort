@@ -52,10 +52,6 @@ JS中sort实现算法居然是O(n^2)的冒泡排序，所以有时候有必要�
     	return Math.random() - 0.5;
     })
 --------------------- 
-作者：huyao_road 
-来源：CSDN 
-原文：https://blog.csdn.net/qq_37746973/article/details/80297570 
-版权声明：本文为博主原创文章，转载请附上博文链接！
 
 ## 快速排序
 
